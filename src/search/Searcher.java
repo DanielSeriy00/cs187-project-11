@@ -56,8 +56,17 @@ public abstract class Searcher<T> {
 	 * @throws NullPointerException
 	 *             if solution is null
 	 */
-	public final boolean isValidSolution(List<T> solution) {
+	public final boolean isValidSolution(List<T> solution) 
+			throws NullPointerException {
         // TODO
-        return false;
+		if(solution == null) {
+			throw new NullPointerException();
+		}
+		
+		boolean retVal = false;
+		
+		if(solution.get(0).equals(getInitialState()));
+		
+        return retVal;
 	}
 }
