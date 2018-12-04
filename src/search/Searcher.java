@@ -76,7 +76,9 @@ public abstract class Searcher<T> {
 					retVal = true;
 				}
 			}
-			if(
+			if() {
+				
+			}
 		}
 		
         return retVal;
