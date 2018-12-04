@@ -65,7 +65,19 @@ public abstract class Searcher<T> {
 		
 		boolean retVal = false;
 		
-		if(solution.get(0).equals(getInitialState()));
+		for(int j = 0; j < solution.size(); j++) {
+			if(j == 0) {
+				if(solution.get(0) == getInitialState()) {
+					retVal = true;
+				}
+			}
+			if(j == solution.size() - 1) {
+				if(solution.get(j) == getFinalState()) {
+					retVal = true;
+				}
+			}
+			if(
+		}
 		
         return retVal;
 	}
