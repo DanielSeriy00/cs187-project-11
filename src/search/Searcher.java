@@ -63,21 +63,25 @@ public abstract class Searcher<T> {
 			throw new NullPointerException();
 		}
 		
-		boolean retVal = false;
+		boolean retVal = true;
 		
-		for(int j = 0; j < solution.size(); j++) {
-			if(j == 0) {
-				if(solution.get(0) == getInitialState()) {
-					retVal = true;
-				}
+		if(!solution.get(0).equals(searchProblem.getInitialState())) {
+			retVal = false;
+		}
+		
+		if(!searchProblem.isGoal(solution.get(solution.size() - 1))) {
+			retVal = false;
+		}
+		
+		for(int j = 0; j < solution.size() - 2; j++) {
+			if(!retVal) {
+				break;
 			}
-			if(j == solution.size() - 1) {
-				if(solution.get(j) == getFinalState()) {
-					retVal = true;
-				}
-			}
-			if() {
-				
+			
+			List<T> nextP = searchProblem.getSuccessors(solution.get(j));
+			T nextE = solution.get(j+1);
+			if(!nextP.contains(nextE)) {
+				retVal = false;
 			}
 		}
 		

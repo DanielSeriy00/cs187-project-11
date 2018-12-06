@@ -41,6 +41,7 @@ public class PublicSearcherTest {
 	public void testIsValidSolution() {
 		List<Cell> solution = new ArrayList<Cell>();
 		Searcher<Cell> s = new RecursiveDepthFirstSearcher<Cell>(maze);
+		System.out.println(s);
 		solution.add(new Cell(1, 0));
 		solution.add(new Cell(0, 0));
 		solution.add(new Cell(0, 1));
