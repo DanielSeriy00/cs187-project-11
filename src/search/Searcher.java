@@ -73,13 +73,15 @@ public abstract class Searcher<T> {
 			retVal = false;
 		}
 		
-		for(int j = 0; j < solution.size() - 2; j++) {
+		for(int j = 0; j < solution.size() - 1; j++) {
 			if(!retVal) {
 				break;
 			}
-			
+
 			List<T> nextP = searchProblem.getSuccessors(solution.get(j));
+			//System.out.println(nextP);
 			T nextE = solution.get(j+1);
+			//System.out.println(nextE);
 			if(!nextP.contains(nextE)) {
 				retVal = false;
 			}
