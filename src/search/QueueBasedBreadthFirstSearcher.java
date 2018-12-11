@@ -14,13 +14,25 @@ import java.util.Queue;
  */
 public class QueueBasedBreadthFirstSearcher<T> extends Searcher<T> {
 
+	ArrayList<T> queue;
+	
 	public QueueBasedBreadthFirstSearcher(SearchProblem<T> searchProblem) {
 		super(searchProblem);
+		queue = new ArrayList<T>();
 	}
 
 	@Override
 	public List<T> findSolution() {
-        		// TODO
-        		return null;
+		// TODO
+		visited.add(searchProblem.getInitialState());
+		queue.add(searchProblem.getInitialState());
+		
+		
+		return solution;
+	}
+	
+	public String toString() {
+		return "visited list: " + visited +
+				"/nqueue: " + queue + "/n";
 	}
 }
